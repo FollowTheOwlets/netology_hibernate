@@ -13,7 +13,7 @@ public class Repository {
     private EntityManager manager;
 
     public List<Person> getPersonsByCity(String city) {
-        return manager.createQuery("SELECT p FROM Person p where lower(p.cityOfLiving) = lower(:city)", Person.class)
+        return manager.createQuery("SELECT p FROM Person p where lower(p.city) = lower(:city)", Person.class)
                 .setParameter("city", city)
                 .getResultList();
     }
